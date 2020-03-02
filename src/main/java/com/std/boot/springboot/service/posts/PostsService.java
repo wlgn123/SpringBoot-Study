@@ -46,4 +46,15 @@ public class PostsService {
     public List<PostsListResponseDto> findAllDesc() {
         return postsRepository.findAllDesc().stream().map(PostsListResponseDto::new).collect(Collectors.toList());
     }
+
+    @Transactional
+    public void delete(Long id) {
+        Posts posts = postsRepository.findById(id)
+                .orElseThrow( () -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+
+        /**
+         * JpaRepository 에서 이미 delete 메소드를 지원하고있으므로 활용.
+         */
+        postsRepository.delete(posts);
+    }
 }

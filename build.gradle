@@ -40,7 +40,10 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     // H2 데이터베이스
     compile('com.h2database:h2')
-
+    // 머스태치 템플릿엔진
+    compile('org.springframework.boot:spring-boot-starter-mustache')
+    // 소셜 로그인 등 클라이언트 입장에서 소셜기능 구현시 필요한 의존 라이브러리
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

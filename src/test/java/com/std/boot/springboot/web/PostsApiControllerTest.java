@@ -5,7 +5,6 @@ import com.std.boot.springboot.domain.posts.Posts;
 import com.std.boot.springboot.domain.posts.PostsRepository;
 import com.std.boot.springboot.web.dto.PostsSaveRequestDto;
 import com.std.boot.springboot.web.dto.PostsUpdateRequestDto;
-import org.assertj.core.util.Lists;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

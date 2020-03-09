@@ -1,6 +1,5 @@
 package com.std.boot.springboot.domain.posts;
 
-import org.assertj.core.util.Lists;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

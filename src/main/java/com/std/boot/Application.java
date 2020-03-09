@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 // 본 클래스는 최상단에 위치해야함.
 
 // JPA Auditing 활성화
-@EnableJpaAuditing
+// @EnableJpaAuditing
 // SpringbootApplication Annotation으로 인해 스프링 부트 자동설정, 스프링 Bean 읽기, 생성 등 자동 설정 진행.
 @SpringBootApplication
 public class Application {

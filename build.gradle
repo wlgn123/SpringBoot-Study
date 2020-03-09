@@ -49,4 +49,6 @@ dependencies {
     testCompile('org.springframework.security:spring-security-test')
     // 세션을 jdbc(mysql, mariadb 등)에서 관리하게끔하는 의존성
     compile('org.springframework.session:spring-session-jdbc')
+
+    compile('org.mariadb.jdbc:mariadb-java-client')
 }

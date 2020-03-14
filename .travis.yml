@@ -27,6 +27,7 @@ before_deploy:
   - mkdir -p deploy
   - mv springboot-study.zip deploy/springboot-study.zip
 
+
 deploy:
   - provider: s3
   access_key_id: $AWS_ACCESS_KEY

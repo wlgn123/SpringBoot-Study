@@ -27,19 +27,16 @@ before_deploy:
   - mkdir -p deploy
   - mv springboot-study.zip deploy/springboot-study.zip
 
-
 deploy:
   - provider: s3
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-
-
-  bucket: spring.hjh.build
-  region: ap-northeast-2
-  skip_cleanup: true
-  acl: private
-  local_dir: deploy
-  wait-until-deployed: true
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: spring.hjh.build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: deploy
+    wait-until-deployed: true
 
 # 자동알람
 notifications:

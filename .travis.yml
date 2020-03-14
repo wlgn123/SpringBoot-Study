@@ -22,11 +22,14 @@ cache :
 # master 브랜치에 푸시 되었을때 수행하는 명령어
 script: "./gradlew clean build"
 
+# deploy 명령어가 실행되기 전에 수행함.
+# CodeDeploy가 Jar를 인식하지 못하므로 zip으로 압축
 before_deploy:
   - zip -r springboot-study *
   - mkdir -p deploy
   - mv springboot-study.zip deploy/springboot-study.zip
 
+# S3로 파일 업로드 혹은 CodeDeploy로 배포 등 외부서비소와 연동될 행위를 선언
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
@@ -36,6 +39,18 @@ deploy:
     skip_cleanup: true
     acl: private
     local_dir: deploy
+    wait-until-deployed: true
+
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+
+    bucket: spring.hjh.build
+    key: springboot-study.zip
+    bundle_type: zip
+    application: springboot-study
+    deployment_group: springboot-study
+    region: ap-northeast-2
     wait-until-deployed: true
 
 # 자동알람

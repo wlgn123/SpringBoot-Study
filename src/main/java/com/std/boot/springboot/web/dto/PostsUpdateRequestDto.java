@@ -4,9 +4,12 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotEmpty;
+
 @Getter
 @NoArgsConstructor
 public class PostsUpdateRequestDto {
+    @NotEmpty(message = "{post.title.empty}")
     private String title;
     private String content;
 

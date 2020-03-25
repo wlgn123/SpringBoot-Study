@@ -7,6 +7,8 @@ import com.std.boot.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RequiredArgsConstructor
 @RestController
 public class PostsApiController {
@@ -18,7 +20,7 @@ public class PostsApiController {
      * @param requestDto
      */
     @PostMapping("/api/v1/posts")
-    public Long save (@RequestBody PostsSaveRequestDto requestDto) {
+    public Long save (@Valid @RequestBody PostsSaveRequestDto requestDto) {
 
         return postsService.save(requestDto);
     }

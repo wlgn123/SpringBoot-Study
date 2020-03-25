@@ -20,7 +20,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group 'com.std.boot'
-version '1.0-SNAPSHOT'
+version '1.0-SNAPSHOT-' + new Date().format("yyyyMMddHHmmss")
 
 // gradle 버전
 sourceCompatibility = 1.8
